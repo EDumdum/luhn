@@ -21,11 +21,27 @@ Luhn.generate('456'); // 4564
 ### isValid
 
 Check input value, must be not null, not undefined and of type string or number.
+
 The stringified value must be only digits and longer than 1 (/^[0-9]{2,}$/).
+
 Check the value against Luhn formula.
+
+Returns boolean.
 
 ### generate
 
 Check input value, must be not null, not undefined and of type string or number.
+
 The stringified value must be only digits and longer than 0 (/^[0-9]{1,}$/).
-Add check digit to the rawValue and return it.
+
+Returns input value with checkdigit appended at the end.
+
+### getRemainder
+
+Compute remainder using Luhn formula.
+
+Fast entry: we assume that the given parameter is a non-null string containing only digits. It will crash otherwise.
+
+Returns a number.
+
+Note: Remainder cannot be directly used as check digit. To generate check digit, please refer to method generate.
