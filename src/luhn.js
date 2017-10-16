@@ -33,6 +33,21 @@ const luhn = {
         }
 
         return value + ((10 - getLuhnRemainder(value + '0')) % 10).toString();
+    },
+
+    /**
+     * Compute remainder using Luhn formula.
+     * Fast entry: we assume that the given parameter is a non-null string
+     * containing only digits. It will crash otherwise.
+     * Returns a number.
+     * 
+     * Note: Remainder cannot be directly used as check digit.
+     * To generate check digit, please refer to method generate.
+     * 
+     * @param {*} rawValue 
+     */
+    getRemainder(rawValue) {
+        return getLuhnRemainder(rawValue);
     }
 };
 
@@ -49,8 +64,8 @@ const MAPPING_FIGURE = {
 };
 
 function getLuhnRemainder(value) {
-    let accumulator = 0;
     const length = value.length;
+    let accumulator = 0;
 
     for (let i = 0; i < length; ++i) {
         accumulator += (length - i) % 2 === 0 ? MAPPING_FIGURE.even[value[i]] : MAPPING_FIGURE.odd[value[i]];
