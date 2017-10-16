@@ -1,6 +1,6 @@
 # luhn
 
-Validation and control key geeration against Luhn formula in javascript.
+Validation and control key generation against Luhn formula in javascript.
 
 ## Usage
 
@@ -8,6 +8,7 @@ Validation and control key geeration against Luhn formula in javascript.
 
 ```js
 var Luhn = require('luhn-js');
+
 Luhn.isValid('123'); // false
 Luhn.isValid('11122'); // true
 
