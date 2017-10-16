@@ -1,5 +1,5 @@
 {
-  "name": "edum-luhn",
+  "name": "luhn-js",
   "version": "1.0.0",
   "description": "Using Luhn algorithm, validate or generate control key for big integer",
   "main": "index.js",
