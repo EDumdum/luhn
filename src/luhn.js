@@ -64,11 +64,12 @@ const MAPPING_FIGURE = {
 };
 
 function getLuhnRemainder(value) {
-    const length = value.length;
+    let length = value.length;
     let accumulator = 0;
+    let bit = 0;
 
-    for (let i = 0; i < length; ++i) {
-        accumulator += (length - i) % 2 === 0 ? MAPPING_FIGURE.even[value[i]] : MAPPING_FIGURE.odd[value[i]];
+    while (length-- > 0) {
+        accumulator += (bit ^= 1) ? MAPPING_FIGURE.odd[value[length]] : MAPPING_FIGURE.even[value[length]];
     }
 
     return accumulator % 10;
