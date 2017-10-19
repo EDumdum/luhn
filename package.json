@@ -1,6 +1,6 @@
 {
   "name": "luhn-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Using Luhn algorithm, validate or generate control key for big integer",
   "main": "index.js",
   "scripts": {
