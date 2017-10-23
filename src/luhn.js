@@ -54,22 +54,16 @@ const luhn = {
 const FORMAT_ISVALID = /^[0-9]{2,}$/;
 const FORMAT_GENERATE = /^[0-9]{1,}$/;
 
-const MAPPING_FIGURE = {
-    'even': {
-        '0': 0, '1': 2, '2': 4, '3': 6, '4': 8, '5': 1, '6': 3, '7': 5, '8': 7, '9': 9
-    },
-    'odd': {
-        '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9
-    }
-};
+const CHARCODE_0 = '0'.charCodeAt(0);
+const MAPPING_EVEN = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9];
 
 function getLuhnRemainder(value) {
-    let length = value.length;
-    let accumulator = 0;
-    let bit = 0;
+    var length = value.length;
+    var accumulator = 0;
+    var bit = 0;
 
     while (length-- > 0) {
-        accumulator += (bit ^= 1) ? MAPPING_FIGURE.odd[value[length]] : MAPPING_FIGURE.even[value[length]];
+        accumulator += (bit ^= 1) ? value.charCodeAt(length) - CHARCODE_0 : MAPPING_EVEN[value.charCodeAt(length) - CHARCODE_0];
     }
 
     return accumulator % 10;
