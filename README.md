@@ -1,4 +1,4 @@
-# luhn
+# luhn [![Build Status](https://travis-ci.org/EDumdum/luhn.svg?branch=master)](https://travis-ci.org/EDumdum/luhn)
 
 Validation and control key generation against Luhn formula in javascript.
 
