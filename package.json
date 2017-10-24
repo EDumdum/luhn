@@ -1,7 +1,7 @@
 {
   "name": "luhn-js",
-  "version": "1.0.2",
-  "description": "Using Luhn algorithm, validate or generate control key for big integer",
+  "version": "1.1.0",
+  "description": "Validation and control key generation for credit cards (and more) using Luhn algorithm",
   "main": "index.js",
   "scripts": {
     "lint": "node_modules/.bin/eslint .",
@@ -13,7 +13,17 @@
     "url": "git+https://github.com/EDumdum/luhn.git"
   },
   "keywords": [
-    "Luhn", "ISO 7812", "IEC 7812", "ISO/IEC 7812", "card validation", "card", "credit", "validation", "credit card", "checksum", "check digit"
+    "Luhn",
+    "ISO 7812",
+    "IEC 7812",
+    "ISO/IEC 7812",
+    "card validation",
+    "card",
+    "credit",
+    "validation",
+    "credit card",
+    "checksum",
+    "check digit"
   ],
   "author": "E. Dumont",
   "license": "MIT",
