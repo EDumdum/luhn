@@ -13,7 +13,7 @@
     "url": "git+https://github.com/EDumdum/luhn.git"
   },
   "keywords": [
-    "Luhn", "ISO 7812", "IEC 7812", "IOS/IEC 7812", "card validation", "card", "creditcard"
+    "Luhn", "ISO 7812", "IEC 7812", "ISO/IEC 7812", "card validation", "card", "credit", "validation", "credit card", "checksum", "check digit"
   ],
   "author": "E. Dumont",
   "license": "MIT",
