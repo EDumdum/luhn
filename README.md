@@ -1,6 +1,9 @@
-# luhn [![Build Status](https://travis-ci.org/EDumdum/luhn.svg?branch=master)](https://travis-ci.org/EDumdum/luhn)
+[![Build Status](https://travis-ci.org/EDumdum/luhn.svg?branch=master)](https://travis-ci.org/EDumdum/luhn)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Edumdum/luhn/master/LICENSE)
 
-Validation and control key generation against Luhn formula in javascript.
+# luhn 
+
+Validation and control key generation for credit cards (and more) using [Luhn](http://en.wikipedia.org/wiki/Luhn_algorithm) algorithm.
 
 ## Usage
 
@@ -9,39 +12,44 @@ Validation and control key generation against Luhn formula in javascript.
 ```js
 var Luhn = require('luhn-js');
 
-Luhn.isValid('123'); // false
-Luhn.isValid('11122'); // true
+Luhn.isValid('44542738505150162'); // false
+Luhn.isValid('44540661970241257'); // true
 
-Luhn.generate('123'); // 1230
-Luhn.generate('456'); // 4564
+Luhn.generate('4454066197024125'); // 44540661970241257
+
+Luhn.getRemainder('44543353847144279'); // 8
 ```
 
 ## API
 
-### isValid
+### `isValid(value)` -> `Boolean`
 
-Check input value, must be not null, not undefined and of type string or number.
+Check requierements.  
+Returns if the Luhn check digit is valid.
 
-The stringified value must be only digits and longer than 1 (/^[0-9]{2,}$/).
+*Required*
+- Value must be not `Null`
+- Value must be of type `String`
+- Value must respect format `^[0-9]{2,}$`
 
-Check the value against Luhn formula.
+### `generate(value)` -> `String`
 
-Returns boolean.
+Check requierements.  
+Returns the Luhn check digit appended to the value.
 
-### generate
+*Required*
+- Value must be not `Null`
+- Value must be of type `String`
+- Value must respest format `^[0-9]{1,}$`
 
-Check input value, must be not null, not undefined and of type string or number.
+### `getRemainder(value)` -> `Number`
 
-The stringified value must be only digits and longer than 0 (/^[0-9]{1,}$/).
+Does **NOT** check requierements.  
+Returns the Luhn remainder.
 
-Returns input value with checkdigit appended at the end.
+**Note:** Luhn remainder === 0 is equivalent to `isValid`. You may want to use this method instead of `isValid` if you ensure argument requirements on your side.
 
-### getRemainder
+*Required*
+- Value must be not `Null`
+- Value must be of type `String`
 
-Compute remainder using Luhn formula.
-
-Fast entry: we assume that the given parameter is a non-null string containing only digits. It will crash otherwise.
-
-Returns a number.
-
-Note: Remainder cannot be directly used as check digit. To generate check digit, please refer to method generate.
