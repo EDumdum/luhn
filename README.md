@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/luhn-js.svg)](https://badge.fury.io/js/luhn-js)
 [![Build Status](https://travis-ci.org/EDumdum/luhn.svg?branch=master)](https://travis-ci.org/EDumdum/luhn)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Edumdum/luhn/master/LICENSE)
 
