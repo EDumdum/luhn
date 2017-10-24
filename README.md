@@ -44,7 +44,7 @@ Returns the Luhn check digit appended to the value.
 
 ### `getRemainder(value)` -> `Number`
 
-Does **NOT** check requierements.  
+Does **NOT** check requirements.  
 Returns the Luhn remainder.
 
 **Note:** `getRemainder(value) === 0` is equivalent to `isValid(value)`. You may want to use this method instead of `isValid` if you ensure argument requirements on your side.
