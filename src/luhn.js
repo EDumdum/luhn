@@ -2,7 +2,7 @@
 
 const luhn = {
     /**
-     * Check input value, must be not null, not undefined and of type string or number.
+     * Check input value, must be not null, not undefined and of type string.
      * The stringified value must be only digits and longer than 1 (/^[0-9]{2,}$/).
      * Check the value against Luhn formula.
      * 
@@ -19,7 +19,7 @@ const luhn = {
     },
 
     /**
-     * Check input value, must be not null, not undefined and of type string or number.
+     * Check input value, must be not null, not undefined and of type string.
      * The stringified value must be only digits and longer than 0 (/^[0-9]{1,}$/).
      * Add check digit to the rawValue and return it.
      * 
@@ -71,17 +71,15 @@ function getLuhnRemainder(value) {
 
 function stringifyInput(rawValue) {
     if (rawValue !== null && rawValue !== undefined) {
-        switch(typeof rawValue) {
-        case 'string':
+        if (typeof rawValue === 'string') {
             return rawValue;
-        case 'number':
-            return rawValue.toString();
-        default:
-            throw new Error('Expecting value of type \'string\' or \'number\', found: \'' + (typeof rawValue) + '\'');
+            
         }
+        
+        throw new Error('Expecting value of type \'string\', found: \'' + (typeof rawValue) + '\'');
     }
 
-    throw new Error('Expecting value of type \'string\' or \'number\', found: \'' + rawValue + '\'');
+    throw new Error('Expecting value of type \'string\', found: \'' + rawValue + '\'');
 }
 
 module.exports = luhn;
