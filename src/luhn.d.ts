@@ -5,7 +5,7 @@
  * Requirements:
  * - rawValue must be not `Null`
  * - rawValue must be of type `String`
- * - rawValue must respest format `^[0-9]{1,}$`
+ * - rawValue must respect format `^[0-9]{1,}$`
  * 
  * @param {*} rawValue 
  */

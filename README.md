@@ -41,7 +41,7 @@ Returns the Luhn check digit appended to the value.
 *Required*
 - Value must be not `Null`
 - Value must be of type `String`
-- Value must respest format `^[0-9]{1,}$`
+- Value must respect format `^[0-9]{1,}$`
 
 ### `getRemainder(value)` -> `Number`
 
