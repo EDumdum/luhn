@@ -1,3 +1,8 @@
+.eslintignore
+.eslintrc.json
+.gitignore
+.travis.yml
 coverage/**/*
 node_modules/**/*
 npm-debug.log
+test/**/*

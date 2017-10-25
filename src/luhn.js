@@ -2,9 +2,13 @@
 
 const luhn = {
     /**
-     * Check input value, must be not null, not undefined and of type string.
-     * The stringified value must be only digits and longer than 1 (/^[0-9]{2,}$/).
-     * Check the value against Luhn formula.
+     * Check requirements.  
+     * Returns if the Luhn check digit is valid.
+     *
+     * Requirements:
+     * - rawValue must be not `Null`
+     * - rawValue must be of type `String`
+     * - rawValue must respect format `^[0-9]{2,}$`
      * 
      * @param {*} rawValue 
      */
@@ -19,9 +23,13 @@ const luhn = {
     },
 
     /**
-     * Check input value, must be not null, not undefined and of type string.
-     * The stringified value must be only digits and longer than 0 (/^[0-9]{1,}$/).
-     * Add check digit to the rawValue and return it.
+     * Check requirements.  
+     * Returns the Luhn check digit appended to the value.
+     * 
+     * Requirements:
+     * - rawValue must be not `Null`
+     * - rawValue must be of type `String`
+     * - rawValue must respest format `^[0-9]{1,}$`
      * 
      * @param {*} rawValue 
      */
@@ -36,13 +44,16 @@ const luhn = {
     },
 
     /**
-     * Compute remainder using Luhn formula.
-     * Fast entry: we assume that the given parameter is a non-null string
-     * containing only digits. It will crash otherwise.
-     * Returns a number.
+     * Does NOT check requirements.  
+     * Returns the Luhn remainder.
+     * Note: 
+     *   `getRemainder(value) === 0` is equivalent to `isValid(value)`. 
+     *   You may want to use this method instead of `isValid` if you ensure argument 
+     *   requirements on your side.
      * 
-     * Note: Remainder cannot be directly used as check digit.
-     * To generate check digit, please refer to method generate.
+     * Requirements
+     * - rawValue must be not `Null`
+     * - rawValue must be of type `String`
      * 
      * @param {*} rawValue 
      */

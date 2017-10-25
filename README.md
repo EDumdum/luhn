@@ -25,7 +25,7 @@ Luhn.getRemainder('44543353847144279'); // 8
 
 ### `isValid(value)` -> `Boolean`
 
-Check requierements.  
+Check requirements.  
 Returns if the Luhn check digit is valid.
 
 *Required*
@@ -35,7 +35,7 @@ Returns if the Luhn check digit is valid.
 
 ### `generate(value)` -> `String`
 
-Check requierements.  
+Check requirements.  
 Returns the Luhn check digit appended to the value.
 
 *Required*
