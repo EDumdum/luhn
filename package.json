@@ -1,6 +1,6 @@
 {
   "name": "luhn-js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validation and control key generation for credit cards (and more) using Luhn algorithm",
   "main": "./src/luhn.js",
   "types": "./src/luhn.d.ts",
