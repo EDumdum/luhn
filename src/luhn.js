@@ -12,7 +12,7 @@ const luhn = {
      * 
      * @param {*} rawValue 
      */
-    isValid(rawValue) {
+    isValid: function(rawValue) {
         const value = stringifyInput(rawValue);
 
         if (!value.match(FORMAT_ISVALID)) {
@@ -33,7 +33,7 @@ const luhn = {
      * 
      * @param {*} rawValue 
      */
-    generate(rawValue) {
+    generate: function(rawValue) {
         const value = stringifyInput(rawValue);
 
         if (!value.match(FORMAT_GENERATE)) {
@@ -57,7 +57,7 @@ const luhn = {
      * 
      * @param {*} rawValue 
      */
-    getRemainder(rawValue) {
+    getRemainder: function(rawValue) {
         return getLuhnRemainder(rawValue);
     }
 };
